@@ -1,20 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect } from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import BottomTabNavigator from "./Navigations/BottomTabNavigator";
+import { I18nextProvider } from "react-i18next";
+import i18n from "./i18n";
 
-export default function App() {
+export default function App({}) {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <I18nextProvider i18n={i18n}>
+      <NavigationContainer>
+        <BottomTabNavigator />
+      </NavigationContainer>
+    </I18nextProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
